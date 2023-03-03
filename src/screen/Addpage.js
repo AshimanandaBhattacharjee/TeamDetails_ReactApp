@@ -7,25 +7,31 @@ import Button from '@mui/material/Button';
 import { useState } from 'react'
 import HtmlTable from '../components/htmlTable/HtmlTable';
 import ClickCount from '../components/clickCount/ClickCount';
+import EmployeeForm from '../components/form/Form';
 
 
 export default function Addpage() {
-    const [showTable, setShowTable] = useState('')
 
-    //const dataLength = 1;
 
-    const handleOnChange = (e) => {
-        setShowTable(e.target.value)
-        console.log(e.target.value)
-    }
 
-    const handleShowTable = (e) => {
-        // setShowTable(!showTable);
-        // e.preventDefault()
-        // console.log(showTable)
-        console.log("Employee Name: ",document.getElementById("Employee Name").value,", ")
-        console.log("Employee Title: ",document.getElementById("Employee Title").value,", ")
-        console.log("Employee Hobbies: ",document.getElementById("Employee Hobbies").value,)
+
+    // const [showTable, setShowTable] = useState('')
+    // const [formValues, setFormValues] = useState();
+    // //const dataLength = 1;
+
+    // const handleOnChange = (e) => {
+    //     setShowTable(e.target.value)
+    //     console.log(e.target.value)
+    // }
+
+    // const handleShowTable = (e) => {
+    //     // setShowTable(!showTable);
+    //     // e.preventDefault()
+    //     // console.log(showTable)
+    //     /*console.log("Employee Name: ",document.getElementById("Employee Name").value,", ")
+    //     console.log("Employee Title: ",document.getElementById("Employee Title").value,", ")
+    //     console.log("Employee Hobbies: ",document.getElementById("Employee Hobbies").value,)*/
+    //     console.log(formValues)
 
         // const inputFields = document.querySelectorAll(".fill")
         // // Create empty inputValues array
@@ -37,7 +43,7 @@ export default function Addpage() {
         //     inputValues.push(inputFields[i].value)
         //     fields.push(inputFields[i].field)
         // }
-        
+
         // // Log array in the console
         // // console.log(inputValues)
 
@@ -45,23 +51,28 @@ export default function Addpage() {
         //     // Push values of each input field into an array
         //     console.log(fields[i],": ",inputValues[i],", ")
         // }
-    }
+    // }
     return (
         <div className='Addpage'>
             <Title heading="Team Details" />
-            <Input id="Employee Name" type="text" field="Employee Name: " class="fill" />
-            <Input id="Employee Title" type="text" field="Employee Title: " class="fill" />
-            <Input type="file" field="Employee Pic: " class="fill1" />
-            <Input id="Employee Hobbies" type="text" field="Employee Hobbies: " class="fill" />
-            {/* <Button type="button" class="btn" value="Add"/> */}
-            <Button
+
+                {/* <Input id="Employee Name" type="text" field="Employee Name: " class="fill" />
+                <Input id="Employee Title" type="text" field="Employee Title: " class="fill" />
+                <Input type="file" field="Employee Pic: " class="fill1" />
+                <Input id="Employee Hobbies" type="text" field="Employee Hobbies: " class="fill" /> */}
+                <EmployeeForm />
+                <Button
                 variant="contained"
                 color="secondary"
                 size="small"
-                onClick={handleShowTable}
-            >
-                Add
-            </Button>
+                type="submit"
+                //onClick={handleShowTable}
+                >
+                    Add
+                </Button>
+
+            {/* <Button type="button" class="btn" value="Add"/> */}
+            
             <BasicTable/>
             {/* {show && <HtmlTable/>} */}
 

@@ -2,19 +2,23 @@ import { useState } from "react";
 import "./Input.css";
 
 export default function Input(props) {
-    const { formValues, setFormValues } = useState({});
+    const [formValues, setFormValues] = useState({});
     const handleOnChange = (e) => {
         setFormValues({ ...formValues, [e.target.id]: e.target.value }) 
         console.log(formValues)
     }
-
+    const handleSubmit = (e) => {
+        console.log(formValues)
+    }
+    // let 
     return (
         <div className="out">
             {/* <span className="title"><h1>Team Details</h1></span> */}
 
             <div className="column">
                 <span className="name">{props.field} </span>
-                <input className={props.class} type={props.type} id={props.id} value={formValues} onChange={handleOnChange} />
+                <input className={props.class} type={props.type} id={props.id} onChange={(e) => {setFormValues({...formValues,[e.target.id]:e.target.value})}} />
+                <button onClick={handleSubmit}>Click here</button>
             </div>
 
             {/* <div className="field">

@@ -6,10 +6,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useState } from 'react';
+
 
 function createData(name, title, pic, hobbies) {
   return { name, title, pic, hobbies};
 }
+
+export default function BasicTable({}) {
+  // const [formValues, setFormValues] = useState();
+  // console.log(formValues);
 
 const rows = [
   createData('Ashimananda Bhattacharjee', 'Intern', '(to be uploaded)', 'Music, Table-Tennis'),
@@ -17,7 +23,6 @@ const rows = [
   createData('','','',''),
 ];
 
-export default function BasicTable() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
